@@ -26,15 +26,19 @@
       node.nodeValue.split(/(\s+)/).forEach(function (tok) {
         if (!tok) return;
         if (/^\s+$/.test(tok)) { var t = document.createTextNode(tok); frag.appendChild(t); made.push(t); return; }
-        var word = document.createElement('span');
-        word.style.whiteSpace = 'nowrap';
-        Array.prototype.forEach.call(tok, function (ch) {
-          var c = document.createElement('span');
-          c.textContent = ch;
-          word.appendChild(c);
-          cells.push({ el: c, ch: ch });
+        // Keep the browser's own break points: split after hyphens and slashes
+        // so a word like "Indo-Pacific" wraps exactly as it does when finished.
+        tok.split(/(?<=[-\u2010-\u2014\/])/).forEach(function (seg) {
+          var word = document.createElement('span');
+          word.style.whiteSpace = 'nowrap';
+          Array.prototype.forEach.call(seg, function (ch) {
+            var c = document.createElement('span');
+            c.textContent = ch;
+            word.appendChild(c);
+            cells.push({ el: c, ch: ch });
+          });
+          frag.appendChild(word); made.push(word);
         });
-        frag.appendChild(word); made.push(word);
       });
       swaps.push({ node: node, made: made });
       node.parentNode.replaceChild(frag, node);
