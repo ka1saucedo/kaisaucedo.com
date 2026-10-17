@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Loan Origination Platform · Kai Saucedo</title>
+<meta name="description" content="A loan origination platform for a commercial lending brokerage, built end to end and live with real applicants.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>(function(){var r=document.documentElement;if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){r.classList.add('scramble-pending');setTimeout(function(){r.classList.remove('scramble-pending')},2500);}})();</script>
+</head>
+<body>
+<main class="wrap">
+<a class="name" href="index.html" data-scramble data-duration="420">Kai Saucedo</a>
+<p class="kicker">Software</p>
+<h1 data-scramble data-delay="80" data-duration="600">Loan Origination Platform</h1>
+<p class="lede" data-scramble data-delay="200" data-duration="900">A lending brokerage ran origination on purchased leads, emailed documents, and lender threads nobody could audit. I replaced the whole path with one system.</p>
+<dl class="meta" data-scramble data-delay="320" data-duration="900"><dt>Role</dt><dd>Solo builder, discovery through deployment</dd><dt>Client</dt><dd>Commercial lending brokerage, through ʻIwa Media</dd><dt>Year</dt><dd>2026</dd><dt>Status</dt><dd>Live with real applicants</dd><dt>Stack</dt><dd>Next.js, React, TypeScript, Supabase (Postgres, Auth, Storage), Row Level Security, pdf-lib, Resend, Vercel</dd></dl><div class="prose">
+<h2>The problem</h2>
+<p>Leads arrived cold from purchased lists. Documents came in by hand over email. Lender coordination lived in threads nobody could audit, and applicants had no idea where they stood, so the team fielded status calls all day. Information was getting lost at every handoff.</p>
+<h2>The approach</h2>
+<p>I embedded with the client and mapped origination end to end before writing any code: every step, every handoff, every place a document or a decision went missing. The losses clustered at three seams: intake, document routing, and status communication.</p>
+<h2>The build</h2>
+<p>One system replaces the whole path. Postgres is the single source of truth, and Row Level Security is the security boundary, so applicants only ever see their own file.</p>
+<ol class="flow"><li><div><strong>Prequalification.</strong> <span>A rules-based engine scores each applicant against the firm's lender programs before anyone on staff spends time on them.</span></div></li><li><div><strong>Application portal.</strong> <span>Applicants sign in and fill out the application at their own pace. Progress saves as they go.</span></div></li><li><div><strong>Documents.</strong> <span>Uploads land in storage tied to the application, not in someone's inbox.</span></div></li><li><div><strong>Signatures.</strong> <span>The system generates prefilled PDFs and collects e-signatures inside the portal.</span></div></li><li><div><strong>Staff CRM.</strong> <span>The team works a pipeline view with document review and status updates that applicants see live.</span></div></li><li><div><strong>Lender package.</strong> <span>One export assembles everything a lender needs to make a decision.</span></div></li></ol><p style="margin-top:1rem">Transactional email goes out through Resend at each status change, so nobody has to send a manual update.</p>
+</div>
+<nav class="pager" aria-label="More work"><a href="index.html">&larr; All work</a><a href="automation.html">Next: <b>Labor Reporting Automation</b> &rarr;</a></nav>
+</main>
+<script src="site.js"></script>
+</body>
+</html>
