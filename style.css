@@ -82,7 +82,7 @@ a.name:hover { color: var(--muted); }
 /* project pages */
 .back { color: var(--muted); font-size: 0.9375rem; text-decoration: none; display: inline-block; transition: color .15s; }
 .back:hover { color: var(--fg); }
-.page-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 0 0 0.5rem; }
+.page-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 1.75rem 0 1.25rem; }
 .kicker { color: var(--muted); font-size: 0.9375rem; margin: 0; }
 h1 { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.015em; line-height: 1.3; margin: 0; text-wrap: balance; }
 .lede { font-size: var(--step-2); line-height: 1.38; letter-spacing: -0.012em; color: var(--muted); margin: 0.75rem 0 0; max-width: 33em; }
