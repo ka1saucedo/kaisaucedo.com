@@ -7,7 +7,7 @@ Plain HTML, CSS, and a little JavaScript. No framework, no build step. The home 
 - **Loan Origination Platform**: a financing-intake platform for a commercial lending brokerage, live with real applicants
 - **Wave Glider Pressure Vessel**: UCSD capstone with NIWC Pacific
 - **Labor Reporting Automation**: a one-click Excel VBA tool that replaced a construction department's manual weekly reporting
-- **Paid Social Campaign**: Meta ads for a mobile mechanic, about 8x return on ad spend
+- **Paid Social Campaign**: two Meta campaigns for a mobile mechanic, $0.21 link clicks and about 8.5x return on the reel
 - **Personal Agent Stack**: one shared memory layer for every AI agent I run
 - **ʻIwa Media**: the digital studio I co-founded
 - **OFF THE TOP** and **KAIKAI**: two brands I built from zero
