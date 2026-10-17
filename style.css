@@ -72,9 +72,9 @@ a.name:hover { color: var(--muted); }
 .work .tag { color: var(--muted); font-size: 0.9375rem; white-space: nowrap; transition: color .15s; }
 .work li a:hover .tag { color: var(--fg); }
 .work li a:hover .title { color: var(--muted); }
-.group-label { color: var(--muted); font-size: 0.9375rem; margin: 2.5rem 0 0.4rem; }
-.group-label:first-of-type { margin-top: clamp(4rem, 10vw, 6.5rem); }
-.group-label + .work { margin-top: 0; }
+.group-label { color: var(--muted); font-size: 0.9375rem; margin: 3rem 0 0.5rem; }
+.hero + .group-label { margin-top: clamp(3.5rem, 8vw, 5rem); }
+.group-label + .work, .group-label + .intro { margin-top: 0; }
 .foot { margin-top: 5rem; color: var(--muted); font-size: 0.875rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--fg); }
