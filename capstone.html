@@ -18,12 +18,19 @@
 <p class="kicker">Engineering</p>
 <h1>Wave Glider Pressure Vessel</h1>
 <p class="lede">A pressure vessel for an acoustic modem on a Navy Wave Glider, built with NIWC Pacific for my UCSD senior capstone.</p>
-<dl class="meta"><dt>Role</dt><dd>Hydrodynamics lead, five-engineer team</dd><dt>Sponsor</dt><dd>NIWC Pacific (Naval Information Warfare Center)</dd><dt>Course</dt><dd>MAE 156A/B senior design, UC San Diego</dd><dt>Year</dt><dd>2024 to 2025</dd><dt>Tools</dt><dd>SolidWorks, ANSYS (CFD), 3D printing, hydrostatic testing</dd></dl><div class="prose">
+<dl class="meta"><dt>Role</dt><dd>Hydrodynamics lead</dd><dt>Sponsor</dt><dd>NIWC Pacific (Naval Information Warfare Center)</dd><dt>Course</dt><dd>MAE 156</dd><dt>Year</dt><dd>2024 to 2025</dd><dt>Tools</dt><dd>SolidWorks, ANSYS (CFD), 3D printing, hydrostatic testing</dd></dl><dl class="figures">
+<div><dt>81.7%</dt><dd>Less drag with the dome</dd></div>
+<div><dt>350m</dt><dd>Required operating depth</dd></div>
+<div><dt>125%</dt><dd>Of rated pressure, held in hydrostatic testing</dd></div>
+<div><dt>FS 3</dt><dd>Factor of safety at 1,000m in FEA</dd></div>
+</dl>
+<div class="prose">
 <h2>The project</h2>
-<p>Our team designed a pressure vessel to house an acoustic modem on a Navy Wave Glider, an uncrewed surface vehicle that rides ocean waves for long missions. The housing had to survive depth and add as little drag as possible.</p>
-<h2>What I did</h2>
-<ol class="flow"><li><div><strong>Design.</strong> <span>Designed components in SolidWorks.</span></div></li><li><div><strong>Prototype.</strong> <span>3D printed prototypes to check fit and form early.</span></div></li><li><div><strong>Simulate.</strong> <span>Ran CFD in ANSYS and iterated the shape to cut drag by 80%.</span></div></li><li><div><strong>Validate.</strong> <span>Validated the final design by hydrostatic testing at pressures equivalent to 350m depth.</span></div></li></ol><h2>More</h2>
-<p>I built the team's project site, which has the full final report: <a href="https://sites.google.com/eng.ucsd.edu/mae156b-2025winter-team16" target="_blank" rel="noopener">UCSD MAE 156B, Team 16</a>.</p>
+<p>NIWC Pacific runs Wave Gliders, uncrewed surface vehicles that ride ocean waves on long missions and tow sensor payloads below them on a winch. They wanted to add a ROAM modem (RF, optical, and acoustic) to the Wave Glider so it could talk to other underwater systems. Our five-person team designed the pressure vessel that carries it: mounted inline between the tow cable and the towed acoustic array, rated past 350m, and shaped to add as little drag as possible.</p>
+<h2>The design</h2>
+<ol class="flow"><li><div><strong>Housing.</strong> <span>Anodized 6061-T6 aluminum tube with 7075-T6 end caps, sealed with O-rings and locking flanges.</span></div></li><li><div><strong>Internals.</strong> <span>Eight 3D-printed strong-backs and bulkheads that slot together and hold the five ROAM electronics: modem PCB stack, relay controller, power distribution, and a LiPo battery. Everything slides out for service.</span></div></li><li><div><strong>Hydrodynamic dome.</strong> <span>A hemispherical cover printed in ASA carbon fiber, in two halves that lock onto the top end cap around the tow cable.</span></div></li><li><div><strong>External mounts.</strong> <span>Tow cable and tow array connections, plus clamps and a protective cage for the M27 and M21 transducers.</span></div></li></ol><h2>What I did</h2>
+<ol class="flow"><li><div><strong>Design.</strong> <span>Designed the hydrodynamic dome in SolidWorks and 3D printed prototypes to check fit early.</span></div></li><li><div><strong>Analyze.</strong> <span>Modeled drag with and without the dome at tow speeds of 0.8 to 2.0 knots, and confirmed it in ANSYS CFD. At 2 knots, drag drops from 16.32 N to 2.98 N.</span></div></li><li><div><strong>Validate.</strong> <span>Hydrostatic testing per ISO 21173 and ASME BPVC V: 50%, 100%, and 125% of the 3.51 MPa rated pressure, ten minutes each, after a vacuum seal test.</span></div></li><li><div><strong>Hand off.</strong> <span>The vessel passed final checks and the hardware went to NIWC Pacific.</span></div></li></ol><h2>More</h2>
+<p>I built the team's project site: <a href="https://sites.google.com/eng.ucsd.edu/mae156b-2025winter-team16" target="_blank" rel="noopener">MAE 156, Team 16</a></p>
 </div>
 <nav class="pager" aria-label="More work"><a href="index.html">&larr; All work</a><a href="automation.html">Next: <b>Labor Reporting Automation</b> &rarr;</a></nav>
 </main>

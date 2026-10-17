@@ -106,6 +106,10 @@ table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; font-varia
 th, td { text-align: left; padding: 0.45rem 1rem 0.45rem 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
 thead th { color: var(--muted); font-weight: 400; font-size: 0.875rem; }
 tbody th { color: var(--muted); font-weight: 400; }
+.campaigns tbody th { color: var(--fg); vertical-align: top; }
+.campaigns td { vertical-align: top; }
+.campaigns td:last-child { white-space: normal; min-width: 14rem; padding-right: 0; }
+.campaigns .sub { color: var(--muted); font-size: 0.8125rem; }
 .pager { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem 2rem; margin-top: 4.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 0.9375rem; }
 .pager a { text-decoration: none; color: var(--muted); }
 .pager a:hover { color: var(--fg); }
