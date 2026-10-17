@@ -3,10 +3,9 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) { root.classList.remove('scramble-pending'); return; }
 
-  var U = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', L = 'abcdefghijklmnopqrstuvwxyz', D = '0123456789', S = '#%&*+=<>/\\[]';
+  var U = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', L = 'abcdefghijklmnopqrstuvwxyz', D = '0123456789', S = '#%&*+=<>/\\';
   function pick(set) { return set.charAt(Math.floor(Math.random() * set.length)); }
   function glyph(ch) {
-    if (/\s/.test(ch)) return ch;
     if (ch >= 'A' && ch <= 'Z') return pick(U);
     if (ch >= 'a' && ch <= 'z') return pick(L);
     if (ch >= '0' && ch <= '9') return pick(D);
@@ -18,48 +17,71 @@
     return out;
   }
 
+  // Each character gets a box locked to its real width, so scrambled glyphs
+  // never change line breaks, heights, or the spacing of anything around them.
+  function lockText(el) {
+    var cells = [], swaps = [];
+    textNodes(el).forEach(function (node) {
+      var frag = document.createDocumentFragment(), made = [];
+      node.nodeValue.split(/(\s+)/).forEach(function (tok) {
+        if (!tok) return;
+        if (/^\s+$/.test(tok)) { var t = document.createTextNode(tok); frag.appendChild(t); made.push(t); return; }
+        var word = document.createElement('span');
+        word.style.whiteSpace = 'nowrap';
+        Array.prototype.forEach.call(tok, function (ch) {
+          var c = document.createElement('span');
+          c.textContent = ch;
+          word.appendChild(c);
+          cells.push({ el: c, ch: ch });
+        });
+        frag.appendChild(word); made.push(word);
+      });
+      swaps.push({ node: node, made: made });
+      node.parentNode.replaceChild(frag, node);
+    });
+    cells.forEach(function (c) { c.w = c.el.getBoundingClientRect().width; });
+    cells.forEach(function (c) {
+      var st = c.el.style;
+      st.display = 'inline-block'; st.width = c.w + 'px'; st.textAlign = 'center'; st.overflow = 'visible';
+    });
+    return { cells: cells, restore: function () {
+      swaps.forEach(function (s) {
+        var first = s.made[0];
+        if (first && first.parentNode) first.parentNode.insertBefore(s.node, first);
+        s.made.forEach(function (m) { if (m.parentNode) m.parentNode.removeChild(m); });
+      });
+    } };
+  }
+
   function scramble(el, delay, duration) {
     if (el._scrambling) return;
     el._scrambling = true;
-    var nodes = textNodes(el);
-    var finals = nodes.map(function (n) { return n.nodeValue; });
-    var len = finals.reduce(function (a, s) { return a + s.length; }, 0) || 1;
+    var lock = lockText(el), cells = lock.cells, len = cells.length || 1;
     var dur = duration || Math.min(1500, 260 + len * 5);
-    var reveal = [], cur = [];
-    for (var i = 0; i < len; i++) reveal.push(delay + (i / len) * dur * 0.8 + Math.random() * dur * 0.2);
-    finals.forEach(function (f) { cur.push(Array.prototype.map.call(f, glyph)); });
-    var h = el.getBoundingClientRect().height;
-    if (h) el.style.minHeight = h + 'px';
-    nodes.forEach(function (n, k) { n.nodeValue = cur[k].join(''); });
+    cells.forEach(function (c, i) {
+      c.at = delay + (i / len) * dur * 0.8 + Math.random() * dur * 0.2;
+      c.el.textContent = glyph(c.ch);
+    });
     el.style.visibility = 'visible';
     var start = performance.now(), last = 0;
     function frame(now) {
-      var t = now - start, swap = now - last > 50, done = true, g = 0;
+      var t = now - start, swap = now - last > 50, done = true;
       if (swap) last = now;
-      nodes.forEach(function (n, k) {
-        var f = finals[k], c = cur[k];
-        for (var j = 0; j < f.length; j++, g++) {
-          if (t >= reveal[g]) c[j] = f.charAt(j);
-          else { done = false; if (swap) c[j] = glyph(f.charAt(j)); }
-        }
-        n.nodeValue = c.join('');
-      });
-      if (!done) requestAnimationFrame(frame);
-      else {
-        nodes.forEach(function (n, k) { n.nodeValue = finals[k]; });
-        el.style.minHeight = '';
-        el._scrambling = false;
+      for (var i = 0; i < cells.length; i++) {
+        var c = cells[i];
+        if (c.done) continue;
+        if (t >= c.at) { c.el.textContent = c.ch; c.done = true; }
+        else { done = false; if (swap) c.el.textContent = glyph(c.ch); }
       }
+      if (!done) requestAnimationFrame(frame);
+      else { lock.restore(); el._scrambling = false; }
     }
     requestAnimationFrame(frame);
   }
 
   function run() {
-    var els = Array.prototype.slice.call(document.querySelectorAll('[data-scramble]'));
-    els.forEach(function (el) {
-      var d = parseFloat(el.getAttribute('data-delay') || '0');
-      var dur = parseFloat(el.getAttribute('data-duration') || '0');
-      scramble(el, d, dur);
+    document.querySelectorAll('[data-scramble]').forEach(function (el) {
+      scramble(el, parseFloat(el.getAttribute('data-delay') || '0'), parseFloat(el.getAttribute('data-duration') || '0'));
     });
     root.classList.remove('scramble-pending');
     if (window.matchMedia && matchMedia('(hover: hover)').matches) {
@@ -69,6 +91,11 @@
       });
     }
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
-  else run();
+  function ready(fn) {
+    var go = false, once = function () { if (!go) { go = true; fn(); } };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(once);
+    setTimeout(once, 900);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { ready(run); });
+  else ready(run);
 })();
