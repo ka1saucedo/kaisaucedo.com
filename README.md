@@ -8,7 +8,7 @@ Plain HTML, CSS, and a little JavaScript. No framework, no build step. The home 
 - **Wave Glider Pressure Vessel**: UCSD capstone with NIWC Pacific
 - **Labor Reporting Automation**: a one-click Excel VBA tool that replaced a construction department's manual weekly reporting
 - **Paid Social Campaigns**: 14 Meta campaigns for Yoga Floats and Bogger Builds, 3,873 link clicks at $0.35 average
-- **Personal Agent Stack**: one shared memory layer for every AI agent I run
+- **Personal Agent Stack**: orchestrators, subagents and shared memory, automated for repetitive work and live website operations
 - **ʻIwa Media**: the digital studio I co-founded
 - **OFF THE TOP** and **KAIKAI**: two brands I built from zero
 
