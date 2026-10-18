@@ -99,6 +99,10 @@ a.name:hover { color: var(--muted); }
 .brand-sm { justify-content: flex-start; gap: 0.9rem; margin: 3rem 0 0; padding: 0; }
 .brand-sm .brand-mark { height: 2.4rem; }
 .brand-sm .brand-word { height: 1.15rem; }
+.meta-wrap { position: relative; margin-top: 3rem; }
+.meta-wrap .meta { margin-top: 0; }
+.meta-wrap .meta-aside { position: absolute; right: 0; top: calc(50% + 0.6rem); transform: translateY(-50%); margin: 0; }
+@media (max-width: 640px) { .meta-wrap .meta-aside { position: static; transform: none; margin-top: 1.75rem; } }
 .brand-fls { height: clamp(3.25rem, 8vw, 4.25rem); width: auto; }
 .brand-mark { height: clamp(3.25rem, 9vw, 5rem); width: auto; }
 .brand-word { height: clamp(1.6rem, 4.5vw, 2.4rem); width: auto; }
