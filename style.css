@@ -95,7 +95,8 @@ a.name:hover { color: var(--muted); }
 .video-cap { color: var(--muted); font-size: 0.875rem; margin: 0.6rem 0 0; }
 .video.vertical { width: min(100%, 20rem); margin-left: auto; margin-right: auto; }
 .video-cap.center { text-align: center; }
-.brand { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 2rem); margin: 2.5rem 0 0; padding: clamp(2rem, 6vw, 3.5rem) 1.5rem; border: 1px solid var(--line); border-radius: 10px; background: #FFFFFF; }
+.brand { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 2rem); margin: 2.5rem 0 0; padding: clamp(1rem, 4vw, 2rem) 0; }
+.brand-fls { height: clamp(3.25rem, 8vw, 4.25rem); width: auto; }
 .brand-mark { height: clamp(3.25rem, 9vw, 5rem); width: auto; }
 .brand-word { height: clamp(1.6rem, 4.5vw, 2.4rem); width: auto; }
 .shot-native img { max-width: 540px; }
