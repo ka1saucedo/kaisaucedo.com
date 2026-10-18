@@ -96,10 +96,12 @@ a.name:hover { color: var(--muted); }
 .video.vertical { width: min(100%, 20rem); margin-left: auto; margin-right: auto; }
 .video-cap.center { text-align: center; }
 .brand { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 2rem); margin: 2.5rem 0 0; padding: clamp(1rem, 4vw, 2rem) 0; }
+.brand-sm { justify-content: flex-start; gap: 0.9rem; margin: 3rem 0 0; padding: 0; }
+.brand-sm .brand-mark { height: 2.4rem; }
+.brand-sm .brand-word { height: 1.15rem; }
 .brand-fls { height: clamp(3.25rem, 8vw, 4.25rem); width: auto; }
 .brand-mark { height: clamp(3.25rem, 9vw, 5rem); width: auto; }
 .brand-word { height: clamp(1.6rem, 4.5vw, 2.4rem); width: auto; }
-.shot-native img { max-width: 540px; }
 .brand-pair { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.25rem clamp(1.25rem, 5vw, 3rem); margin: 3rem 0 0; }
 .brand-pair figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
 .brand-pair figcaption { color: var(--muted); font-size: 0.8125rem; }
