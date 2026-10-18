@@ -18,9 +18,9 @@
 <h1>Personal Agent Stack</h1>
 <p class="lede">One memory layer for every agent I run, so I stop re-explaining my life to each one.</p>
 
-<dl class="meta"><dt>Role</dt><dd>Builder and only user</dd><dt>Year</dt><dd>2026</dd><dt>Status</dt><dd>In active development</dd><dt>Stack</dt><dd>Hermes, Claude Code, Docker, MCP (Model Context Protocol), Obsidian, Notion, cron</dd></dl><div class="prose">
+<dl class="meta"><dt>Role</dt><dd>Builder and only user</dd><dt>Year</dt><dd>2026</dd><dt>Status</dt><dd>In active development</dd><dt>Stack</dt><dd>Hermes, Claude Code, Docker, MCP, Obsidian, Notion, cron</dd></dl><div class="prose">
 <h2>The problem</h2>
-<p>Every artificial intelligence (AI) tool I used started from zero. I kept re-explaining my work, my projects, and my deadlines to each one. The context existed, it just lived in my head and in a dozen apps.</p>
+<p>Every AI tool I used started from zero. I kept re-explaining my work, my projects, and my deadlines to each one. The context existed, it just lived in my head and in a dozen apps.</p>
 <h2>The build</h2>
 <p>One memory layer that every agent reads from and writes to.</p>
 <ol class="flow"><li><div><strong>Shared memory.</strong> <span>An Obsidian knowledge base, exposed through a local MCP server, acts as memory for Claude, Claude Code, and Hermes alike.</span></div></li><li><div><strong>Agents.</strong> <span>Hermes runs in Docker. Claude Code handles engineering work. Both work from the same notes.</span></div></li><li><div><strong>Schedules.</strong> <span>Agents run on cron for recurring work, like checking deadlines and preparing drafts.</span></div></li><li><div><strong>Capture.</strong> <span>Messy quick notes from my phone get triaged into tasks and deadlines in Notion. This part is still in progress.</span></div></li></ol><h2>Guardrails</h2>
