@@ -113,6 +113,8 @@ a.name:hover { color: var(--muted); }
 .brand-pair .logo-new { height: clamp(3rem, 8vw, 4rem); width: auto; }
 .brand-pair .logo-box { height: clamp(3rem, 8vw, 4rem); display: flex; align-items: center; }
 .brand-arrow { color: var(--muted); font-size: 1.25rem; margin-bottom: 1.7rem; }
+.shot-lead { margin-top: 3rem !important; }
+.prose h2.after-shot { margin-top: 1.25rem; }
 .shot { margin: 0.75rem 0 1.25rem; }
 .shot img { width: 100%; height: auto; display: block; border-radius: 10px; }
 .shot figcaption { color: var(--muted); font-size: 0.875rem; margin-top: 0.6rem; }
