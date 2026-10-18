@@ -82,6 +82,14 @@ a.name:hover { color: var(--muted); }
 /* project pages */
 .back { color: var(--muted); font-size: 0.9375rem; text-decoration: none; display: inline-block; transition: color .15s; }
 .back:hover { color: var(--fg); }
+.video { position: relative; aspect-ratio: 16 / 9; margin: 2.5rem 0 0; border-radius: 10px; overflow: hidden; background: #0D0D0D; }
+.video button { all: unset; cursor: pointer; position: absolute; inset: 0; display: block; }
+.video img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 4rem; height: 4rem; border-radius: 50%; background: rgba(13,13,13,.72); display: grid; place-items: center; box-shadow: 0 0 0 1px rgba(249,249,249,.3); transition: background .15s, transform .15s; }
+.video button:hover .play, .video button:focus-visible .play { background: rgba(13,13,13,.9); transform: translate(-50%, -50%) scale(1.05); }
+.video .play svg { width: 1.4rem; height: 1.4rem; margin-left: 0.2rem; fill: #F9F9F9; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-cap { color: var(--muted); font-size: 0.875rem; margin: 0.6rem 0 0; }
 .page-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 1.75rem 0 1.25rem; }
 .kicker { color: var(--muted); font-size: 0.9375rem; margin: 0; }
 h1 { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.015em; line-height: 1.3; margin: 0; text-wrap: balance; }
