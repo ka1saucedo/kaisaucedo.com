@@ -115,6 +115,11 @@ a.name:hover { color: var(--muted); }
 .brand-arrow { color: var(--muted); font-size: 1.25rem; margin-bottom: 1.7rem; }
 .shot-lead { margin-top: 3rem !important; }
 .prose h2.after-shot { margin-top: 1.25rem; }
+.shot-badge { position: relative; }
+.shot-badge .badge { position: absolute; top: clamp(0.75rem, 2.5vw, 1.25rem); right: clamp(0.75rem, 2.5vw, 1.25rem); display: flex; align-items: center; gap: 0.6rem; filter: drop-shadow(0 1px 6px rgba(0,0,0,.35)); }
+.shot-badge .badge img { width: auto; border-radius: 0; display: block; }
+.shot-badge .badge .brand-mark { height: clamp(1.5rem, 4vw, 2.2rem); }
+.shot-badge .badge .brand-word { height: clamp(0.75rem, 2vw, 1.05rem); }
 .shot { margin: 0.75rem 0 1.25rem; }
 .shot img { width: 100%; height: auto; display: block; border-radius: 10px; }
 .shot figcaption { color: var(--muted); font-size: 0.875rem; margin-top: 0.6rem; }
